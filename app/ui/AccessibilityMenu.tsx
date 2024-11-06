@@ -1,5 +1,5 @@
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { ChevronDownIcon, PlusCircleIcon, MinusCircleIcon, SunIcon, MoonIcon, EyeIcon } from '@heroicons/react/16/solid'
+import { PlusCircleIcon, MinusCircleIcon, SunIcon, MoonIcon, EyeIcon } from '@heroicons/react/16/solid'
 import { IoAccessibility } from "react-icons/io5";
 
 export default function AccessibilityMenu() {

@@ -20,7 +20,7 @@ export default function CareSection() {
                 </h3>
                 <p className="mt-6 text-lg text-center leading-8 text-gray-700">
                     Les honoraires pratiqués par les praticiens du cabinet sont
-                    conventionnés par l'assurance maladie.
+                    conventionnés par l&apos;assurance maladie.
                 </p>
                 <div className="mx-auto mt-12 grid grid-cols-2 gap-8 text-center">
                     <div className="relative w-full h-60">
