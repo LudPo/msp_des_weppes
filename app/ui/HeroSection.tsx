@@ -8,7 +8,7 @@ export default function HeroSection({ remainingHeight }: HeroSectionProps) {
     <section className="relative isolate overflow-hidden bg-gray-900 flex items-center" style={{ height: `${remainingHeight}px` }}>
       <Image
         alt="Hero Background"
-        src="/images/background_hero.jpg"
+        src="./images/background_hero.jpg"
         fill
         priority
         className="absolute inset-0 -z-10 object-cover object-center"

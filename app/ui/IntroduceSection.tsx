@@ -1,19 +1,19 @@
 const people = [
     {
         name: 'Corinne',
-        image: '/images/infirmiere_portrait.webp',
+        image: './images/infirmiere_portrait.webp',
     },
     {
         name: 'Florya',
-        image: '/images/infirmiere_portrait.webp',
+        image: './images/infirmiere_portrait.webp',
     },
     {
         name: 'Laurence',
-        image: '/images/infirmiere_portrait.webp',
+        image: './images/infirmiere_portrait.webp',
     },
     {
         name: 'Vincent',
-        image: '/images/infirmier_portrait.webp',
+        image: './images/infirmier_portrait.webp',
     },
 ]
 

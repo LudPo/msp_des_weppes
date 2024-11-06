@@ -26,7 +26,7 @@ export default function CareSection() {
                     <div className="relative w-full h-60">
                         <Image
                             alt="tiers payant"
-                            src="/images/tiers_payant.png"
+                            src="./images/tiers_payant.png"
                             fill
                             sizes="15rem"
                             className="object-contain"
@@ -36,7 +36,7 @@ export default function CareSection() {
                     <div className="relative w-full h-60">
                         <Image
                             alt="carte vitale"
-                            src="/images/carte_vitale.png"
+                            src="./images/carte_vitale.png"
                             fill
                             sizes="15rem"
                             className="object-contain"
