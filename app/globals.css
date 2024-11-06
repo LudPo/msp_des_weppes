@@ -5,14 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --customGreen: #6EE7B7;
+  --customGreenLight: #D1FAE5;
+  --customPink:#FDA4AF;
+  --customPinkLight:#FFF1F2;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   color: var(--foreground);

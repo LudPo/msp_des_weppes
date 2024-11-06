@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        customGreen: "var(--customGreen)",
+        customGreenLight: "var(--customGreenLight)",
+        customPink: "var(--customPink)",
+        customPinkLight: "var(--customPinkLight)"
       },
     },
   },
