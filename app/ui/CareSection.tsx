@@ -6,7 +6,7 @@ export default function CareSection() {
             id="care"
             className="relative bg-fixed bg-contain bg-repeat py-24"
             style={{
-                backgroundImage: "url('/images/background_care.png')",
+                backgroundImage: "url('./images/background_care.png')",
                 backgroundSize: "500px"
             }}
         >
