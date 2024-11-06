@@ -2,8 +2,10 @@
 const nextConfig = {
     // basePath: process.env.NEXT_PUBLIC_BASE_PATH || '',
     // assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH || '',
-    basePath: 'msp_des_weppes',
-    assetPrefix: 'msp_des_weppes',
+    basePath: '/msp_des_weppes',
+    assetPrefix: '/msp_des_weppes',
 };
+
+console.log('Base path en production:', process.env.NEXT_PUBLIC_BASE_PATH);
 
 export default nextConfig;
