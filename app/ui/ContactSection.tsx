@@ -20,7 +20,7 @@ export default function ContactSection() {
                     0320589898
                 </span>
                 <p className="mt-10 text-lg text-center leading-8 text-gray-700">
-                    Pour les demandes de soins urgents en dehors des horaires d'ouverture
+                    Pour les demandes de soins urgents en dehors des horaires d&apos;ouverture
                     du secrétariat (samedi de 13h à 20h, dimanche et jour férié de 8h à 20h), vous pouvez nous contacter au :
                 </p>
                 <a

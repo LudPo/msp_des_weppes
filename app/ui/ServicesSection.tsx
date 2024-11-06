@@ -6,7 +6,7 @@ export default function ServicesSection() {
                     Les soins
                 </h3>
                 <p className="mt-6 text-lg text-center leading-8 text-gray-700">
-                    Le cabinet s'occupe de tous les types de patients, quel que soit leur âge et leur pathologie.
+                    Le cabinet s&apos;occupe de tous les types de patients, quel que soit leur âge et leur pathologie.
                 </p>
                 <p className="mt-6 text-lg text-center leading-8 text-gray-700">
                     Nous assurons les soins 7j/7 sur rendez-vous au cabinet et à domicile.

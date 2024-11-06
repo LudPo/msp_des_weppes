@@ -25,7 +25,7 @@ export default function IntroduceSection() {
                 {/* Colonne de gauche : texte */}
                 <div className="max-w-2xl mx-auto">
                     <p className="mt-6 text-lg leading-8">
-                        Installés au sein du centre médical Ambroise Paré, au cœur de la Maison de Santé Pluridisciplinaire des Weppes à Wavrin, nous offrons une prise en charge globale et individualisée de chaque patient. En collaboration étroite avec les autres professionnels de santé de la MSP, nous travaillons de manière pluridisciplinaire, avec l'appui d'un dossier médical informatisé partagé pour assurer une coordination optimale des soins.
+                        Installés au sein du centre médical Ambroise Paré, au cœur de la Maison de Santé Pluridisciplinaire des Weppes à Wavrin, nous offrons une prise en charge globale et individualisée de chaque patient. En collaboration étroite avec les autres professionnels de santé de la MSP, nous travaillons de manière pluridisciplinaire, avec l&apos;appui d&apos;un dossier médical informatisé partagé pour assurer une coordination optimale des soins.
                     </p>
                 </div>
                 {/* Colonne de droite : liste des personnes */}
