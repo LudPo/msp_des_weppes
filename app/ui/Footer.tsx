@@ -12,7 +12,7 @@ export default function FooterSection() {
                 >
                     <Image
                         alt="facebook"
-                        src="/images/facebook-5.svg"
+                        src="./images/facebook-5.svg"
                         fill
                         priority
                     />
@@ -25,7 +25,7 @@ export default function FooterSection() {
                 >
                     <Image
                         alt="Doctolib"
-                        src="/images/logo-doctolib.svg"
+                        src="./images/logo-doctolib.svg"
                         fill
                         priority
                     />
