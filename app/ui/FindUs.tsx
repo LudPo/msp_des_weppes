@@ -2,13 +2,13 @@
 
 export default function FindUs() {
     return (
-        <section className="bg-customPinkLight py-24">
+        <section className="bg-customPink dark:bg-customPinkDark py-24">
             <div >
                 <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8 pb-12">
-                    <h4 className="mx-auto mt-2 max-w-lg text-pretty text-center text-4xl font-medium tracking-tight text-gray-950 sm:text-5xl pb-12">
+                    <h4 className="mx-auto mt-2 max-w-lg text-pretty text-center text-4xl font-medium tracking-tight text-textTitle dark:text-textTitleDark sm:text-5xl pb-12">
                         Où nous trouver ?
                     </h4>
-                    <p className="mt-6 text-lg text-center leading-8 text-gray-700">
+                    <p className="mt-6 text-lg text-center leading-8 text-textPar dark:text-textParDark">
                         Nous sommes situés au 18 Rue Léon Gambetta 59136 Wavrin
                     </p>
                 </div>

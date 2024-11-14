@@ -1,48 +1,73 @@
+import { useState, useEffect } from 'react';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
-import { PlusCircleIcon, MinusCircleIcon, SunIcon, MoonIcon, EyeIcon } from '@heroicons/react/16/solid'
 import { IoAccessibility } from "react-icons/io5";
+import { RiFontFamily } from "react-icons/ri";
+import { PiTextAaBold } from "react-icons/pi";
 
 export default function AccessibilityMenu() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [fontSizeMode, setFontSizeMode] = useState("normal");
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+  const toggleDarkMode = (mode: string) => {
+    setIsDarkMode(mode === 'dark');
+  };
+
+  useEffect(() => {
+    const fontSize = fontSizeMode === "normal" ? "100%" : "120%";
+    document.documentElement.style.fontSize = fontSize;
+  }, [fontSizeMode]);
+  const setNormalFontSize = () => setFontSizeMode("normal");
+  const setLargeFontSize = () => setFontSizeMode("large");
+
   return (
-    <div className="fixed bottom-4 right-4  text-right z-50">
+    <div className="fixed bottom-4 right-4 text-right z-50">
       <Menu>
-        <MenuButton className="inline-flex items-center gap-2 rounded-full bg-blue-600 p-2 text-white shadow-md focus:outline-none">
+        <MenuButton className="inline-flex items-center rounded-full bg-linkBlueDark dark:bg-linkBlue p-2 text-textPar dark:text-textParDark shadow-md focus:outline-none">
           <IoAccessibility className="w-8 h-8" />
         </MenuButton>
         <MenuItems
+          anchor="top"
           transition
-          anchor="bottom end"
-          className="w-52 origin-top-right rounded-lg bg-white shadow-lg text-gray-900 focus:outline-none"
+          className="bg-background dark:bg-backgroundDark origin-top transition duration-200 ease-in data-[closed]:scale-95 data-[closed]:opacity-0 [--anchor-gap:8px] rounded-lg border border-linkBlue dark:border-linkBlueDark shadow-lg focus:outline-none"
         >
           <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <PlusCircleIcon className="w-5 h-5 text-blue-600" />
-              Augmenter la taille de police
+            <button
+              onClick={setLargeFontSize}
+              className={`flex w-full items-center justify-center p-2 dark:text-white 
+                  ${fontSizeMode === "large"?'bg-linkBlueDark dark:bg-linkBlue ':'hover:bg-linkBlueDark dark:hover:bg-linkBlue'}`}
+                    >
+              <RiFontFamily className="w-10 h-10" />
             </button>
           </MenuItem>
           <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <MinusCircleIcon className="w-5 h-5 text-blue-600" />
-              Diminuer la taille de police
+            <button
+              onClick={setNormalFontSize}
+              className={`flex w-full items-center justify-center p-2 dark:text-white
+                  ${fontSizeMode === "normal"?'bg-linkBlueDark dark:bg-linkBlue':'hover:bg-linkBlueDark dark:hover:bg-linkBlue'}`}
+                  >
+              <RiFontFamily className="w-5 h-5" />
             </button>
           </MenuItem>
-          <div className="my-1 h-px bg-gray-200" />
+          <div className=" h-px bg-linkBlue dark:bg-linkBlueDark" />
           <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <SunIcon className="w-5 h-5 text-yellow-500" />
-              Mode lumineux
-            </button>
-          </MenuItem>
-          <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <MoonIcon className="w-5 h-5 text-gray-700" />
-              Mode sombre
+            <button
+              onClick={() => toggleDarkMode('light')}
+              className={`flex w-full items-center justify-center p-2 ${!isDarkMode ? 'bg-linkBlueDark text-white' : 'hover:bg-linkBlue'}`}>
+              <PiTextAaBold className="w-8 h-8 rounded-full p-1 bg-white text-black border" />
             </button>
           </MenuItem>
           <MenuItem>
-            <button className="group flex w-full items-center gap-2 rounded-lg py-2 px-4 hover:bg-gray-100">
-              <EyeIcon className="w-5 h-5 text-green-500" />
-              Augmenter le contraste
+            <button
+              onClick={() => toggleDarkMode('dark')}
+              className={`flex w-full items-center justify-center p-2 ${isDarkMode ? 'bg-linkBlue text-white' : 'hover:bg-linkBlueDark'}`}>
+              <PiTextAaBold className="w-8 h-8 rounded-full p-1 bg-black text-white" />
             </button>
           </MenuItem>
         </MenuItems>

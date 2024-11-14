@@ -35,7 +35,7 @@ export default function HomePage() {
     }
   }, []);
   return (
-    <div className="bg-white">
+    <div>
       <AccessibilityMenu />
       <div className="header-title">
         <HeaderTitle />

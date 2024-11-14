@@ -6,18 +6,26 @@ const config: Config = {
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       colors: {
         background: "var(--background)",
-        foreground: "var(--foreground)",
         customGreen: "var(--customGreen)",
-        customGreenLight: "var(--customGreenLight)",
         customPink: "var(--customPink)",
-        customPinkLight: "var(--customPinkLight)"
+        textTitle:"var(--textTitle)",
+        textPar:"var(--textPar)",
+        linkBlue:"var(--linkBlue)",
+        backgroundDark: "var(--backgroundDark)",
+        customGreenDark: "var(--customGreenDark)",
+        customPinkDark: "var(--customPinkDark)",
+        textTitleDark:"var(--textTitleDark)",
+        textParDark:"var(--textParDark)",
+        linkBlueDark:"var(--linkBlueDark)",
       },
     },
   },
   plugins: [],
 };
+
 export default config;
