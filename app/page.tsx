@@ -13,30 +13,48 @@ import Footer from './ui/Footer'
 
 export default function HomePage() {
   const [remainingHeight, setRemainingHeight] = useState(0);
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [fontSizeMode, setFontSizeMode] = useState("normal");
+
 
   useEffect(() => {
-    // Obtenir les éléments HeaderTitle et HeaderNav
     const headerTitle = document.querySelector('.header-title');
     const headerNav = document.querySelector('.header-nav');
-
     if (headerTitle && headerNav) {
       const headerTitleHeight = headerTitle.getBoundingClientRect().height;
       const headerNavHeight = headerNav.getBoundingClientRect().height;
-
-      // Calculer la hauteur totale de HeaderTitle et HeaderNav
       const totalHeaderHeight = headerTitleHeight + headerNavHeight;
-
-      // Calculer la hauteur restante du viewport
       const viewportHeight = window.innerHeight;
       const heightToUse = viewportHeight - totalHeaderHeight;
-
-      // Mettre à jour l'état avec la hauteur restante
       setRemainingHeight(heightToUse);
     }
   }, []);
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [isDarkMode]);
+  const toggleDarkMode = (mode: string) => {
+    setIsDarkMode(mode === 'dark');
+  };
+  useEffect(() => {
+    const fontSize = fontSizeMode === "normal" ? "100%" : "120%";
+    document.documentElement.style.fontSize = fontSize;
+  }, [fontSizeMode]);
+  const setNormalFontSize = () => setFontSizeMode("normal");
+  const setLargeFontSize = () => setFontSizeMode("large");
+
   return (
     <div>
-      <AccessibilityMenu />
+      <AccessibilityMenu
+        isDarkMode={isDarkMode}
+        toggleDarkMode={toggleDarkMode}
+        fontSizeMode={fontSizeMode}
+        setNormalFontSize={setNormalFontSize}
+        setLargeFontSize={setLargeFontSize}
+      />
       <div className="header-title">
         <HeaderTitle />
       </div>
@@ -48,7 +66,7 @@ export default function HomePage() {
         <IntroduceSection />
         <FindUs />
         <ServicesSection />
-        <CareSection />
+        <CareSection isDarkMode={isDarkMode} />
         <ContactSection />
       </main>
       <Footer />

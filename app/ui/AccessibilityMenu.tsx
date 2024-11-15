@@ -1,31 +1,25 @@
-import { useState, useEffect } from 'react';
 import { Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { IoAccessibility } from "react-icons/io5";
 import { RiFontFamily } from "react-icons/ri";
 import { PiTextAaBold } from "react-icons/pi";
 
-export default function AccessibilityMenu() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-  const [fontSizeMode, setFontSizeMode] = useState("normal");
+interface AccessibilityMenuProps {
+  isDarkMode: boolean;
+  toggleDarkMode: (mode: string) => void;
+  fontSizeMode: string;
+  setNormalFontSize: () => void;
+  setLargeFontSize: () => void;
+}
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
-  }, [isDarkMode]);
-  const toggleDarkMode = (mode: string) => {
-    setIsDarkMode(mode === 'dark');
-  };
-
-  useEffect(() => {
-    const fontSize = fontSizeMode === "normal" ? "100%" : "120%";
-    document.documentElement.style.fontSize = fontSize;
-  }, [fontSizeMode]);
-  const setNormalFontSize = () => setFontSizeMode("normal");
-  const setLargeFontSize = () => setFontSizeMode("large");
-
+export default function AccessibilityMenu(
+  {
+    isDarkMode,
+    toggleDarkMode,
+    fontSizeMode,
+    setNormalFontSize,
+    setLargeFontSize,
+  }: AccessibilityMenuProps
+) {
   return (
     <div className="fixed bottom-4 right-4 text-right z-50">
       <Menu>
@@ -41,8 +35,8 @@ export default function AccessibilityMenu() {
             <button
               onClick={setLargeFontSize}
               className={`flex w-full items-center justify-center p-2 dark:text-white 
-                  ${fontSizeMode === "large"?'bg-linkBlueDark dark:bg-linkBlue ':'hover:bg-linkBlueDark dark:hover:bg-linkBlue'}`}
-                    >
+                  ${fontSizeMode === "large" ? 'bg-linkBlueDark dark:bg-linkBlue ' : 'hover:bg-linkBlueDark dark:hover:bg-linkBlue'}`}
+            >
               <RiFontFamily className="w-10 h-10" />
             </button>
           </MenuItem>
@@ -50,8 +44,8 @@ export default function AccessibilityMenu() {
             <button
               onClick={setNormalFontSize}
               className={`flex w-full items-center justify-center p-2 dark:text-white
-                  ${fontSizeMode === "normal"?'bg-linkBlueDark dark:bg-linkBlue':'hover:bg-linkBlueDark dark:hover:bg-linkBlue'}`}
-                  >
+                  ${fontSizeMode === "normal" ? 'bg-linkBlueDark dark:bg-linkBlue' : 'hover:bg-linkBlueDark dark:hover:bg-linkBlue'}`}
+            >
               <RiFontFamily className="w-5 h-5" />
             </button>
           </MenuItem>

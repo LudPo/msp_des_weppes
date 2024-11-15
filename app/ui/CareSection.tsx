@@ -1,16 +1,9 @@
-import { useState, useEffect } from 'react';
 import Image from "next/image";
 
-export default function CareSection() {
-    const [isDarkMode, setIsDarkMode] = useState(false);
-
-    useEffect(() => {
-        if (isDarkMode) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-    }, [isDarkMode]);
+interface CareSectionProps {
+    isDarkMode: boolean;
+}
+export default function CareSection({ isDarkMode }: CareSectionProps) {
     return (
         <section
             id="care"
@@ -36,8 +29,8 @@ export default function CareSection() {
                     <div className="relative w-full h-60">
                         <Image
                             alt="tiers payant"
-                            // src="./images/tiers_payant.png"
-                            src="/images/tiers_payant.png"
+                            src="./images/tiers_payant.png"
+                            // src="/images/tiers_payant.png"
                             fill
                             sizes="15rem"
                             className="object-contain"
@@ -47,8 +40,8 @@ export default function CareSection() {
                     <div className="relative w-full h-60">
                         <Image
                             alt="carte vitale"
-                            // src="./images/carte_vitale.png"
-                            src="/images/carte_vitale.png"
+                            src="./images/carte_vitale.png"
+                            // src="/images/carte_vitale.png"
                             fill
                             sizes="15rem"
                             className="object-contain"
